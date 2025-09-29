@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import brochure images
@@ -34,6 +34,15 @@ const Brochure: React.FC = () => {
     }
   };
 
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000); // 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount or re-render
+  }, [current]);
+
   return (
     <section className="relative w-full min-h-screen bg-gray-100 flex flex-col items-center justify-center py-10 px-4">
       {/* Heading */}
@@ -59,7 +68,7 @@ const Brochure: React.FC = () => {
               initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3}}
+              transition={{ duration: 0.3 }}
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
               onDragEnd={handleDragEnd}
@@ -101,4 +110,3 @@ const Brochure: React.FC = () => {
 };
 
 export default Brochure;
-  
