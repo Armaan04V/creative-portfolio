@@ -24,19 +24,28 @@ const Brochure: React.FC = () => {
     setCurrent((prev) => (prev === 0 ? brochures.length - 1 : prev - 1));
   };
 
+  const handleDragEnd = (_: any, info: { offset: { x: number } }) => {
+    const swipe = info.offset.x;
+
+    if (swipe < -100) {
+      nextSlide(); // Swipe left
+    } else if (swipe > 100) {
+      prevSlide(); // Swipe right
+    }
+  };
+
   return (
     <section className="relative w-full min-h-screen bg-gray-100 flex flex-col items-center justify-center py-10 px-4">
       {/* Heading */}
-<div className="max-w-8xl mx-auto text-center mb-20">
-  <h2 className="text-4xl md:text-6xl font-extrabold mb-4 text-gray-900 tracking-tight">
-    Brochure Gallery
-  </h2>
-  <div className="mx-auto mb-8 h-1 w-32 bg-green-800 rounded"></div>
-  <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed tracking-wide">
-    A curated collection of brochure designs showcasing a range of layouts, styles, and brand identities.
-  </p>
-</div>
-
+      <div className="max-w-8xl mx-auto text-center mb-20">
+        <h2 className="text-4xl md:text-6xl font-extrabold mb-4 text-gray-900 tracking-tight">
+          Brochure Gallery
+        </h2>
+        <div className="mx-auto mb-8 h-1 w-32 bg-green-800 rounded"></div>
+        <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed tracking-wide">
+          A curated collection of brochure designs showcasing a range of layouts, styles, and brand identities.
+        </p>
+      </div>
 
       {/* Slider Wrapper */}
       <div className="relative w-full max-w-5xl">
@@ -50,7 +59,10 @@ const Brochure: React.FC = () => {
               initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.7, ease: "easeInOut" }}
+              transition={{ duration: 0.3}}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={handleDragEnd}
             />
           </AnimatePresence>
         </div>
@@ -89,3 +101,4 @@ const Brochure: React.FC = () => {
 };
 
 export default Brochure;
+  
