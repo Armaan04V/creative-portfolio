@@ -82,14 +82,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@sorabhans.com',
-      href: 'mailto:hello@sorabhans.com'
+      value: 'hanssorab0@gmail.com',
+      href: 'mailto:hanssorab0@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+91 70871 49133',
+      href: 'tel:+917087149133'
     },
     {
       icon: MapPin,
@@ -99,11 +99,7 @@ const Contact = () => {
     }
   ];
 
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-  ];
+
 
   return (
     <section
@@ -159,23 +155,7 @@ const Contact = () => {
               ))}
             </div>
 
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-white">Follow Me</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, i) => (
-                  <a
-                    key={i}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-white/10 border border-white/20 rounded-lg hover:border-primary/50 hover:text-primary transition-all duration-300 group"
-                    aria-label={social.label}
-                  >
-                    <social.icon size={20} className="group-hover:scale-110 transition-transform text-white" />
-                  </a>
-                ))}
-              </div>
-            </div>
+            
           </div>
 
           {/* Contact Form */}
