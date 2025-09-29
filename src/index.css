@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sorab Hans Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Portfolio Dark Theme */
+    --portfolio-black: 0 0% 4%;
+    --portfolio-dark: 0 0% 8%;
+    --portfolio-neon: 115 100% 50%;
+    --portfolio-neon-glow: 115 100% 70%;
+    --portfolio-white: 0 0% 98%;
+    --portfolio-gray: 0 0% 60%;
+    --portfolio-gray-dark: 0 0% 25%;
+    
+    /* Semantic Design Tokens */
+    --background: var(--portfolio-black);
+    --foreground: var(--portfolio-white);
+    --card: var(--portfolio-dark);
+    --card-foreground: var(--portfolio-white);
+    --primary: var(--portfolio-neon);
+    --primary-foreground: var(--portfolio-black);
+    --secondary: var(--portfolio-gray-dark);
+    --secondary-foreground: var(--portfolio-white);
+    --muted: var(--portfolio-gray-dark);
+    --muted-foreground: var(--portfolio-gray);
+    --accent: var(--portfolio-neon);
+    --accent-foreground: var(--portfolio-black);
+    --border: var(--portfolio-gray-dark);
+    --input: var(--portfolio-dark);
+    --ring: var(--portfolio-neon);
+    
+    /* Portfolio Specific Tokens */
+    --glow-radius: 20px;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --signature-font: 'Dancing Script', cursive;
+    --heading-font: 'Inter', sans-serif;
+    --body-font: 'Inter', sans-serif;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--body-font);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+  }
+}
+
+@layer components {
+  /* Signature Text Style */
+  .signature {
+    font-family: var(--signature-font);
+    @apply text-primary;
+    filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.5));
+  }
+  
+  /* Glow Effects */
+  .glow-orb {
+    position: relative;
+    @apply bg-white rounded-full;
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6),
+      0 0 80px rgba(255, 255, 255, 0.4);
+    animation: pulse-glow 3s ease-in-out infinite alternate;
+  }
+  
+  .neon-glow {
+    filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.8));
+  }
+  
+  /* Dashed Border Frame */
+  .dashed-frame {
+    position: relative;
+    @apply border-2 border-dashed border-white/30;
+  }
+  
+  .dashed-frame::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    @apply border-2 border-dashed border-white/20;
+    border-radius: inherit;
+  }
+  
+  /* Portfolio Card Hover Effects */
+  .portfolio-card {
+    @apply border border-border rounded-2xl overflow-hidden;
+    @apply transition-all duration-500 hover:scale-[1.02];
+    @apply hover:shadow-2xl hover:shadow-primary/10;
+    @apply hover:border-primary/30;
+  }
+  
+  /* Text Animations */
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .stagger-fade-in > * {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .stagger-fade-in > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-fade-in > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-fade-in > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-fade-in > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-fade-in > *:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-fade-in > *:nth-child(6) { animation-delay: 0.6s; }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6),
+      0 0 80px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 
+      0 0 30px rgba(255, 255, 255, 1),
+      0 0 60px rgba(255, 255, 255, 0.8),
+      0 0 120px rgba(255, 255, 255, 0.6);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+.masonry-columns {
+  /* Fallback for older browsers */
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+.break-inside-avoid-column {
+  break-inside: avoid;
+  /* Also for WebKit / older */
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
+
