@@ -72,14 +72,28 @@ const Hero = () => {
         </motion.h1>
 
         {/* Hand behind orb + text */}
-       <motion.img
+      <motion.img
   src={handImage}
   alt="Hand holding orb"
-  className="absolute -bottom-9 left-[380px] -translate-x-1/2 w-28 md:w-[350px] z-10 hand-shadow"
+  className="
+    absolute
+    left-[140px]
+    -translate-x-1/2
+    bottom-4
+    w-56
+
+    md:left-[380px]
+    md:-bottom-9
+    md:w-[350px]
+
+    z-10
+    hand-shadow
+  "
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 1, delay: 1 }}
 />
+
 
 
 
