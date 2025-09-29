@@ -94,7 +94,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'New York, NY',
+      value: 'Chandigarh, India',
       href: null
     }
   ];
