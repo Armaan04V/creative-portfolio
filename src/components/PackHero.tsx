@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import heroBackground from "@/assets/hero-background.jpg";
+import TrueFocus from "./ui/TrueFocus";
 
 const PackHero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,15 +30,15 @@ const PackHero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        {/* Main Heading */}
-        <motion.h1
-          className="relative text-6xl md:text-8xl lg:text-[10rem] font-extrabold text-white tracking-tight inline-block z-20"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.3, delay: 0.5, ease: "easeOut" }}
-        >
-          Packaging
-        </motion.h1>
+       {/* Animated TrueFocus Heading */}
+        <TrueFocus
+          sentence="Packaging Mockups"
+          manualMode={false}
+          blurAmount={5}
+          borderColor="green"
+          animationDuration={2}
+          pauseBetweenAnimations={1}
+        />
       </motion.div>
     </section>
   );

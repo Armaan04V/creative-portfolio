@@ -1,7 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Portfolio from '@/components/Portfolio';
+import LogoDesignHero from '@/components/Portfolio';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import LogosGallery from '@/components/LogosGallery';
@@ -23,7 +23,7 @@ const Index = () => {
       <main>
         <Hero />
         <About />
-        <Portfolio />
+        <LogoDesignHero />
         <LogosGallery />
         <SocialMediaHero />
         <SocialMedia />
