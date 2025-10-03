@@ -70,8 +70,8 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
   };
 
   const handleMouseLeave = () => {
-    if (manualMode) {
-      setCurrentIndex(lastActiveIndex!);
+    if (manualMode && lastActiveIndex !== null) {
+      setCurrentIndex(lastActiveIndex);
     }
   };
 
@@ -85,16 +85,10 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
             ref={el => {
               wordRefs.current[index] = el;
             }}
-            className="relative text-[7rem] font-black cursor-pointer"
+            className="relative text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black cursor-pointer text-white"
             style={
               {
-                filter: manualMode
-                  ? isActive
-                    ? `blur(0px)`
-                    : `blur(${blurAmount}px)`
-                  : isActive
-                    ? `blur(0px)`
-                    : `blur(${blurAmount}px)`,
+                filter: isActive ? `blur(0px)` : `blur(${blurAmount}px)`,
                 transition: `filter ${animationDuration}s ease`
               } as React.CSSProperties
             }
