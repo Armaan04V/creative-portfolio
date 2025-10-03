@@ -195,7 +195,7 @@ const Hero = () => {
   alt="Hand holding orb"
   className="
     absolute
-    left-[125px]
+    left-[130px]
     -translate-x-1/2
     bottom-5
     w-52
