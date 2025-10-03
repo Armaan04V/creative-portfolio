@@ -32,7 +32,7 @@ const UIHero = () => {
       >
         {/* Animated TrueFocus Heading */}
         <TrueFocus
-          sentence="Logo Design"
+          sentence="User Interface"
           manualMode={false}
           blurAmount={5}
           borderColor="green"
