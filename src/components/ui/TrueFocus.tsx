@@ -85,7 +85,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
             ref={el => {
               wordRefs.current[index] = el;
             }}
-            className="relative text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black cursor-pointer text-white"
+            className="relative text-6xl sm:text-8xl md:text-7xl lg:text-8xl font-black cursor-pointer text-white"
             style={
               {
                 filter: isActive ? `blur(0px)` : `blur(${blurAmount}px)`,
