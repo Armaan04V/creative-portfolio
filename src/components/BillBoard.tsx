@@ -26,7 +26,7 @@ const BillBoard: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Image 1 */}
           <motion.div
-            className="overflow-hidden rounded-2xl shadow-xl border border-black/10"
+            className="overflow-hidden rounded-2xl shadow-xl border border-black/10 flex justify-center items-center bg-gray-50"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -35,13 +35,13 @@ const BillBoard: React.FC = () => {
             <img
               src={billboards[0]}
               alt="Billboard 1"
-              className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-auto sm:h-[400px] md:h-[500px] object-contain sm:object-cover hover:scale-105 transition-transform duration-700"
             />
           </motion.div>
 
           {/* Image 2 */}
           <motion.div
-            className="overflow-hidden rounded-2xl shadow-xl border border-black/10"
+            className="overflow-hidden rounded-2xl shadow-xl border border-black/10 flex justify-center items-center bg-gray-50"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -50,13 +50,13 @@ const BillBoard: React.FC = () => {
             <img
               src={billboards[1]}
               alt="Billboard 2"
-              className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-auto sm:h-[400px] md:h-[500px] object-contain sm:object-cover hover:scale-105 transition-transform duration-700"
             />
           </motion.div>
 
           {/* Full-width Image 3 */}
           <motion.div
-            className="md:col-span-2 overflow-hidden rounded-2xl shadow-xl border border-black/10"
+            className="md:col-span-2 overflow-hidden rounded-2xl shadow-xl border border-black/10 flex justify-center items-center bg-gray-50"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -65,7 +65,7 @@ const BillBoard: React.FC = () => {
             <img
               src={billboards[2]}
               alt="Billboard 3"
-              className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-auto sm:h-[500px] md:h-[600px] object-contain sm:object-cover hover:scale-105 transition-transform duration-700"
             />
           </motion.div>
         </div>
