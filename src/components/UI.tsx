@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
-import uiImage from "@/assets/ui.png";
+import uiImage1 from "@/assets/ui.jpg";
+import uiImage2 from "@/assets/ui2.jpg";
+import uiImage3 from "@/assets/ui3.jpg";
 
 const UI: React.FC = () => {
+  const images = [
+    { src: uiImage1, alt: "User Interface Design 1" },
+    { src: uiImage2, alt: "User Interface Design 2" },
+    { src: uiImage3, alt: "User Interface Design 3" },
+  ];
+
   return (
     <section className="min-h-screen bg-white py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -16,17 +24,22 @@ const UI: React.FC = () => {
           </p>
         </div>
 
-        {/* Image Section with framer-motion hover scale */}
-        <motion.img
-          src={uiImage}
-          alt="User Interface Design"
-          className="w-full h-[600px] object-contain transition-transform duration-700"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ scale: 1.1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        />
+        {/* Image Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {images.map((image, index) => (
+            <motion.img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              className="w-full h-80 object-contain rounded-lg shadow-lg transition-transform duration-700 bg-gray-100"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.05 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
