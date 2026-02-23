@@ -22,7 +22,7 @@ const About = () => {
   }, []);
 
   const stats = [
-    { icon: Award, value: '5+', label: 'Years Experience' },
+    { icon: Award, value: '1+', label: 'Years Experience' },
     { icon: Users, value: '100+', label: 'Happy Clients' },
     { icon: Coffee, value: '500+', label: 'Projects Completed' },
     { icon: Star, value: '10+', label: 'Notable Collaborations' },
