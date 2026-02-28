@@ -60,7 +60,7 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
                 <p className="text-xl font-medium">
-                  I'm a passionate graphic designer with over 5 years of experience
+                  I'm a passionate graphic designer with over 2 years of experience
                   creating compelling visual narratives that resonate with audiences
                   and drive brand success.
                 </p>
